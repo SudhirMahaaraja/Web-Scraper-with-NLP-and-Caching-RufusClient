@@ -1,0 +1,131 @@
+# robots.txt for www.example.com
+
+# General rules for all user agents
+User-agent: *
+Disallow: /private/
+Disallow: /tmp/
+Disallow: /admin/
+Disallow: /login/
+Disallow: /signup/
+Disallow: /user/profile/
+Disallow: /user/settings/
+Disallow: /api/
+Disallow: /cgi-bin/
+Disallow: /search
+Disallow: /cart
+Disallow: /checkout
+Disallow: /orders
+Disallow: /account
+
+# Allow all crawlers to access the public directory
+Allow: /public/
+Allow: /assets/
+Allow: /images/
+Allow: /css/
+Allow: /js/
+Allow: /blog/
+Allow: /about/
+Allow: /contact/
+Allow: /terms/
+Allow: /privacy/
+Allow: /sitemap.xml
+
+# Block specific bots
+User-agent: BadBot
+Disallow: /
+
+User-agent: EvilScraper
+Disallow: /
+
+# Allow Googlebot full access but restrict specific sections
+User-agent: Googlebot
+Disallow: /private/
+Allow: /public/
+Allow: /images/
+Allow: /blog/
+
+# Allow Bingbot full access except the following
+User-agent: Bingbot
+Disallow: /private/
+Disallow: /api/
+Allow: /
+
+# Specific rules for image crawlers
+User-agent: Googlebot-Image
+Disallow: /private/
+Disallow: /tmp/
+Allow: /public/images/
+Allow: /assets/images/
+
+# Allow all crawlers to index PDFs but block specific folders
+User-agent: *
+Allow: /*.pdf$
+Disallow: /documents/
+Disallow: /downloads/
+Disallow: /private/
+
+# Blocking specific query parameters for all crawlers
+User-agent: *
+Disallow: /*?session_id=
+Disallow: /*?ref=
+
+# Allow all crawlers access to the XML sitemap
+Sitemap: https://www.example.com/sitemap.xml
+
+# Example of allowing a specific crawler to access a folder
+User-agent: Yahoo
+Allow: /yahoo/
+
+# Block access to specific file types
+User-agent: *
+Disallow: /*.zip$
+Disallow: /*.tar$
+Disallow: /*.gz$
+Disallow: /*.exe$
+Disallow: /*.tmp$
+
+# Allow specific crawlers to access certain folders
+User-agent: DuckDuckBot
+Allow: /blog/
+Allow: /news/
+Disallow: /private/
+
+# Additional specific directives for different bots
+User-agent: Slurp
+Disallow: /private/
+
+User-agent: Baiduspider
+Disallow: /tmp/
+Disallow: /cgi-bin/
+
+User-agent: AhrefsBot
+Disallow: /api/
+Disallow: /private/
+
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /search/
+Disallow: /private/
+
+# Allow all crawlers to access the website's root
+User-agent: *
+Allow: /
+
+# Specific rules for mobile bots
+User-agent: Googlebot-Mobile
+Allow: /m/
+Disallow: /m/private/
+Disallow: /m/tmp/
+
+# Allow Bing's mobile crawler
+User-agent: Bingbot-Mobile
+Allow: /mobile/
+Disallow: /mobile/private/
+
+# Comments about crawlers and their behavior
+# The rules above are in place to ensure our site's data is protected
+# and to improve the overall crawling efficiency of search engines.
+
+# Final note: always test your robots.txt file for accuracy and effectiveness.
